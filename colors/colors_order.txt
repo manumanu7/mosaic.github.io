@@ -1,0 +1,110 @@
+for y in range(img_w):
+    for x in range(img_h):
+        total_count = total_count + 1
+        pixel = tuple(img[x,y])
+        if (pixel == (22,22,22)): 
+            color_1 = color_1 + 1
+        elif (pixel == (245,245,245)): 
+            color_2 = color_2 + 1
+        elif (pixel == (231,215,241)): 
+            color_3 = color_3 + 1
+        elif (pixel == (167,147,126)):  
+            color_4 = color_4 + 1
+        elif (pixel == (145,79,121)): 
+            color_5 = color_5 + 1
+        elif (pixel == (139,177,255)): 
+            color_6 = color_6 + 1
+        elif (pixel == (81,129,181)): 
+            color_7 = color_7 + 1
+        elif (pixel == (116,121,220)): 
+            color_8 = color_8 + 1
+        elif (pixel == (28,40,219)): 
+            color_9 = color_9 + 1
+        elif (pixel == (138,87,208)): 
+            color_10 = color_10 + 1
+        
+        elif (pixel == (154,229,248)): 
+            color_11 = color_11 + 1
+        elif (pixel == (181,77,177)): 
+            color_12 = color_12 + 1
+        elif (pixel == (109,173,248)): 
+            color_13 = color_13 + 1
+        elif (pixel == (201,162,178)):  
+            color_14 = color_14 + 1
+        elif (pixel == (202,206,208)): 
+            color_15 = color_15 + 1
+        elif (pixel == (122,154,189)): 
+            color_16 = color_16 + 1
+        elif (pixel == (97,182,238)): 
+            color_17 = color_17 + 1
+        elif (pixel == (220,187,0)): 
+            color_18 = color_18 + 1
+        elif (pixel == (99,184,174)): 
+            color_19 = color_19 + 1
+        elif (pixel == (233,191,139)): 
+            color_20 = color_20 + 1
+        
+        elif (pixel == (41,127,94)): 
+            color_21 = color_21 + 1
+        elif (pixel == (181,208,235)): 
+            color_22 = color_22 + 1
+        elif (pixel == (202,135,62)): 
+            color_23 = color_23 + 1
+        elif (pixel == (78,200,46)):
+            color_24 = color_24 + 1
+        elif (pixel == (137,138,140)): 
+            color_25 = color_25 + 1
+        elif (pixel == (34,63,104)): 
+            color_26 = color_26 + 1
+        elif (pixel == (0,104,255)): 
+            color_27 = color_27 + 1
+        elif (pixel == (220,155,230)): 
+            color_28 = color_28 + 1
+        elif (pixel == (100,100,100)): 
+            color_29 = color_29 + 1
+        elif (pixel == (73,63,51)): 
+            color_30 = color_30 + 1
+        
+        elif (pixel == (184,94,0)): 
+            color_31 = color_31 + 1
+        elif (pixel == (37,54,79)): 
+            color_32 = color_32 + 1
+        elif (pixel == (183,148,231)): 
+            color_33 = color_33 + 1
+        elif (pixel == (68,154,0)):
+            color_34 = color_34 + 1
+        elif (pixel == (153,201,213)): 
+            color_35 = color_35 + 1
+        elif (pixel == (42,53,109)): 
+            color_36 = color_36 + 1
+        elif (pixel == (235,203,190)): 
+            color_37 = color_37 + 1
+        elif (pixel == (1,189,180)): 
+            color_38 = color_38 + 1
+        elif (pixel == (1,209,255)): 
+            color_39 = color_39 + 1
+        elif (pixel == (69,70,198)): 
+            color_40 = color_40 + 1
+        
+        elif (pixel == (79,53,0)): 
+            color_41 = color_41 + 1
+        elif (pixel == (38,85,52)): 
+            color_42 = color_42 + 1
+        elif (pixel == (174,128,142)): 
+            color_43 = color_43 + 1
+        elif (pixel == (110,158,229)):
+            color_44 = color_44 + 1
+        elif (pixel == (1,163,255)): 
+            color_45 = color_45 + 1
+        elif (pixel == (35,85,167)): 
+            color_46 = color_46 + 1
+        elif (pixel == (216,206,176)): 
+            color_47 = color_47 + 1
+        elif (pixel == (161,196,240)): 
+            color_48 = color_48 + 1
+        elif (pixel == (111,165,175)): 
+            color_49 = color_49 + 1
+        elif (pixel == (177,181,178)): 
+            color_50 = color_50 + 1
+        else:
+            print(f"Pixel at ({x}, {y}): {pixel}")

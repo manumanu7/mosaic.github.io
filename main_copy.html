@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/trail.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="nav">
+        <h2><a href="index.html">JeetTechnoSolutions</a></h2>
+    </div>
+
+    <div class="app-main " id="1">
+        <div class="step-wrap container-fluid">
+            <div class="step">
+                <div class="step__body">
+                    <h2 class="step__title h1">Choose an image to brick-it</h2>
+                    <div class="step__choose-image choose-image">
+                        <label class="choose-image__card file-card file-card_type-drop" for="imageUploadField">
+                        <input id="imageUploadField" type="file" name="image" class="file-card__input visually-hidden" accept="image/*" onchange="move(event);">
+                        <span class="file-card__inner">
+                            <span class="file-card__graph"><img src="images/plus.svg" alt="Add" class="file-card__graph-img file-card__graph-img__add"></span>
+                            <span class="file-card__title">Add your photo</span>
+                        </span>
+                    </label>
+                    <button class="choose-image__card file-card" type="button">
+                        <span class="file-card__inner">
+                            <span class="file-card__graph">
+                                <img src="images/choose.svg" alt="Choose" class="file-card__graph-img choose">
+                            </span>
+                            <span class="file-card__title">or browse our library</span>
+                        </span>
+                    </button>
+                </div>
+
+
+                <footer class="step__footer">
+                    <div class="step__footer-content">
+                        <span class="step__footer-text">What pics are best to brick?</span> 
+                        <a href="" target="_blank" rel="noopener noreferrer" class="step__footer-link">Read our tips</a>
+                    </div>
+                </footer>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="app-main hide" id="2">
+        <div class="step-wrap container-fluid">
+            <div class="step">
+                <div class="step__body">
+                    <h2 class="step__title h1">Your selected image</h2>
+                    <div class="step__selected" width="350" height="233" id="bo">
+                        <img src="" alt="Selected Picture" id="selected" class="step__selected-img">
+                    </div>
+                    <div class="step__actions">
+                        <button class="step__actions-btn button button_text_uppercase" type="button" onclick="re()">Brick Me</button>
+                    </div>
+                </div>
+                <footer class="step__footer">
+                    <button class="step__footer-btn" type="button" onclick="rotateImage()" > Rotate image</button>
+                    <button class="step__footer-btn" type="button"><a href="index.html" class="navagation">  Change image </a></button>
+                </footer>
+        </div>
+    </main>
+
+
+    <div class="app-main main hide" id="3">
+        <div class="left">
+                <div class="top a" id="11"  onclick="hide('c1')">
+                    <img class="ima" src="images/top.svg" alt="">
+                    <label for="11">Size, Shape & Crop</label>
+                    <p>Arrangement</p>
+
+                    <div class="content" id="c1">
+                        <p class="heading">Number of Baseplates</p>
+                        <span class="left_plus" id="left_plus" onclick="inc('leftv');"><b>+</b></span> <span class="right_plus" onclick="incr('rightv');"><b>+</b></span> 
+                        <p>Vertical <span class="base"><span id="left"><input type="text" class="val" id="leftv" value="3"></span> <span class="blur">x</span> <span id="right"><input type="text" id="rightv" value="3" class="val"></span></span> Horizontal</p>
+                        <br>
+                        <span class="left_minus" onclick="dec('leftv');"><b>-</b></span> <span class="right_minus" onclick="decr('rightv');"><b>-</b></span>
+                        <p class="heading">Image Zoom (Crop) <span class="per" id="per">100%</span></p>
+                        <span class="range_minus" onclick="dece('range');"><b>-</b></span><input type="range" class="range" value="0" id="range" onchange="change('range');"><span class="range_plus" onclick="ince('range');"><b>+</b></span>
+                    </div>
+                </div>
+
+
+                <div class="middle a" id="22"  onclick="hide('c2')">
+                    <img class="ima" src="images/middle.svg" alt="">
+                    <label for="22">Image adjustments</label>
+                    <p>Edit colours & style</p>
+                    
+                    <div class="content hide" id="c2">
+                        <button class="active b1" id="b1" onclick="trans('b1')">Auto</button><button class="b2" id="b2" onclick="trans('b2')">Custom</button>
+                        <br>
+                        <p class="heading"><span id="number">20</span> colours ( <span class="col">slide to change</span> )</p>
+                        <span class="range_minus" onclick="bm('rangec');"><b>-</b></span><input type="range" class="range" value="20" id="rangec" onchange="chan('rangec');"><span class="range_plus" onclick="bp('rangec');"><b>+</b></span>
+
+                        <div class="colors">
+                            <div class="r r1">
+                                <div class="co" style="background: rgb(22,22,22);"></div>
+                                <div class="co" style="background: rgb(245,245,245);"></div>
+                                <div class="co" style="background: rgb(241,215,231);"></div>
+                                <div class="co" style="background: rgb(126,147,167);"></div>
+                                <div class="co" style="background: rgb(121,79,145);"></div>
+                                <div class="co" style="background: rgb(255,177,139);"></div>
+                                <div class="co" style="background: rgb(181,129,81);"></div>
+                                <div class="co" style="background: rgb(220,121,116);"></div>
+                            </div>
+                            <div class="r r2">
+                                <div class="co" style="background: rgb(219,40,28);"></div>
+                                <div class="co" style="background: rgb(208,87,138);"></div>
+                                <div class="co" style="background: rgb(248,229,154);"></div>
+                                <div class="co" style="background: rgb(177,77,181);"></div>
+                                <div class="co" style="background: rgb(248,173,109);"></div>
+                                <div class="co" style="background: rgb(178,162,201);"></div>
+                                <div class="co" style="background: rgb(208,206,202);"></div>
+                                <div class="co" style="background: rgb(189,154,122);"></div>
+                            </div>
+                            <div class="r r3">
+                                <div class="co" style="background: rgb(238,182,97);"></div>
+                                <div class="co" style="background: rgb(0,187,220);"></div>
+                                <div class="co" style="background: rgb(174,184,99);"></div>
+                                <div class="co" style="background: rgb(139,191,233);"></div>
+                                <div class="co" style="background: rgb(94,127,41);"></div>
+                                <div class="co" style="background: rgb(235,208,181);"></div>
+                                <div class="co" style="background: rgb(62,135,202);"></div>
+                                <div class="co" style="background: rgb(46,200,78);"></div>
+                            </div>
+                            <div class="r r4">
+                                <div class="co" style="background: rgb(140,138,137);"></div>
+                                <div class="co" style="background: rgb(104,63,34);"></div>
+                                <div class="co" style="background: rgb(255,104,0);"></div>
+                                <div class="co" style="background: rgb(230,155,220);"></div>
+                                <div class="co" style="background: rgb(100,100,100);"></div>
+                                <div class="co" style="background: rgb(51,63,73);"></div>
+                                <div class="co" style="background: rgb(0,94,184);"></div>
+                                <div class="co" style="background: rgb(79,54,37);"></div>
+                            </div>
+                            <div class="r r5">
+                                <div class="co" style="background: rgb(231,148,183);"></div>
+                                <div class="co" style="background: rgb(0,154,68);"></div>
+                                <div class="co" style="background: rgb(213,201,153);"></div>
+                                <div class="co" style="background: rgb(109,53,42);"></div>
+                                <div class="co" style="background: rgb(190,203,235);"></div>
+                                <div class="co" style="background: rgb(180,189,1);"></div>
+                                <div class="co" style="background: rgb(255,209,1);"></div>
+                                <div class="co" style="background: rgb(198,70,69);"></div>
+                            </div>
+                            <div class="r r6">
+                                <div class="co" style="background: rgb(0,53,79);"></div>
+                                <div class="co" style="background: rgb(52,85,38);"></div>
+                                <div class="co" style="background: rgb(142,128,174);"></div>
+                                <div class="co" style="background: rgb(229,158,110);"></div>
+                                <div class="co" style="background: rgb(255,163,1);"></div>
+                                <div class="co" style="background: rgb(167,85,35);"></div>
+                                <div class="co" style="background: rgb(176,206,216);"></div>
+                                <div class="co" style="background: rgb(240,196,161);"></div>
+                            </div>
+                            <div class="r r7">
+                                <div class="co" style="background: rgb(175,165,111);"></div>
+                                <div class="co" style="background: rgb(178,181,177);"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="details">
+                            <p>Enhance detail:</p>
+                            <button class="active" onclick="mo('b11')" id="b11">None</button>
+                            <button id="b22" onclick="mo('b22')">Low</button>
+                            <button id="b33" onclick="mo('b33')">Medium</button>
+                            <button id="b44" onclick="mo('b44')">High</button>
+
+                            <p>Brightness: <span id="bright">0</span></p>
+                            <span class="range_minus" onclick="dece_bright('rangeb');"><b>-</b></span><input type="range" class="range" value="100" min="0" max="200" id="rangeb" onchange="change_bright('rangeb');"><span class="range_plus" onclick="ince_bright('rangeb');"><b>+</b></span>
+                            
+                            <p>Contrast: <span id="cont">0</span></p>
+                            <span class="range_minus" onclick="dece_cont('rangeco');"><b>-</b></span><input type="range" class="range" value="100" min="0" max="200" id="rangeco" onchange="change_cont('rangeco');"><span class="range_plus" onclick="ince_cont('rangeco');"><b>+</b></span>
+                            
+                            <p>Saturation: <span id="sat">0</span></p>
+                            <span class="range_minus" onclick="dece_sat('ranges');"><b>-</b></span><input type="range" class="range" value="100" min="0" max="200" id="ranges" onchange="change_sat('ranges');"><span class="range_plus" onclick="ince_sat('ranges');"><b>+</b></span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bottom a" id="33"  onclick="hide('c3')">
+                    <img class="ima" src="images/bottom.svg" alt="">
+                    <label for="33">Draw & Paint</label>
+                    <p>Change individual bricks</p>
+
+                    <div class="content hide" id="c3">
+                        
+                        <button class="bb1 act" id="bb1" onclick="m('bb1')" >Pen tool</button><button class="bb2" id="bb2" onclick="m('bb2')">Paint fill</button>
+                        <p class="heading">Choose a colour</p>
+
+
+                        <div class="colors">
+                            <div class="r r1">
+                                <div class="co" style="background: white;"></div>
+                                <div class="co" style="background: rgb(181, 180, 180);"></div>
+                                <div class="co" style="background: gray;"></div>
+                                <div class="co" style="background: rgb(138, 138, 138);"></div>
+                                <div class="co" style="background: gray;"></div>
+                                <div class="co" style="background: black;"></div>
+                                <div class="co" style="background: rgb(2, 220, 253);"></div>
+                                <div class="co" style="background: rgb(0, 105, 209);"></div>
+                            </div>
+                            <div class="r r2">
+                                <div class="co" style="background: rgb(5, 95, 199);"></div>
+                                <div class="co" style="background: rgb(17, 0, 255);"></div>
+                                <div class="co" style="background: rgb(3, 240, 173);"></div>
+                                <div class="co" style="background: rgb(104, 226, 4);"></div>
+                                <div class="co" style="background: rgb(6, 124, 57);"></div>
+                                <div class="co" style="background: rgb(195, 255, 0);"></div>
+                                <div class="co" style="background: red;"></div>
+                                <div class="co" style="background: rgb(255, 153, 0);"></div>
+                            </div>
+                            <div class="r r3">
+                                <div class="co" style="background: rgb(255, 166, 0);"></div>
+                                <div class="co" style="background: rgb(255, 0, 115);"></div>
+                                <div class="co" style="background: rgb(255, 0, 153);"></div>
+                                <div class="co" style="background: rgb(255, 0, 225);"></div>
+                                <div class="co" style="background: rgb(107, 2, 2);"></div>
+                                <div class="co" style="background: rgb(4, 0, 0);"></div>
+                                <div class="co" style="background: rgb(42, 1, 56);"></div>
+                                <div class="co" style="background: rgb(1, 56, 63);"></div>
+                            </div>
+                            <div class="r r4">
+                                <div class="co" style="background: rgb(81, 3, 3);"></div>
+                                <div class="co" style="background: rgb(1, 63, 16);"></div>
+                                <div class="co" style="background: rgb(52, 79, 2);"></div>
+                                <div class="co" style="background: rgb(81, 55, 1);"></div>
+                                <div class="co" style="background: rgb(18, 68, 68);"></div>
+                                <div class="co" style="background: rgb(173, 122, 237);"></div>
+                                <div class="co" style="background: rgb(174, 73, 238);"></div>
+                                <div class="co" style="background: rgb(131, 241, 172);"></div>
+                            </div>
+                            <div class="r r5">
+                                <div class="co" style="background: rgb(95, 40, 234);"></div>
+                                <div class="co" style="background: rgb(110, 68, 68);"></div>
+                                <div class="co" style="background: rgb(68, 114, 68);"></div>
+                                <div class="co" style="background: rgb(154, 83, 83);"></div>
+                                <div class="co" style="background: rgb(105, 112, 67);"></div>
+                                <div class="co" style="background: rgb(221, 184, 91);"></div>
+                                <div class="co" style="background: rgb(188, 139, 139);"></div>
+                                <div class="co" style="background: rgb(86, 62, 62);"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+
+
+        <div class="right">
+            <div class="work" id="work">
+                <!-- <img src="" alt="image" id="image"> -->
+                <canvas id="canvas"></canvas>
+
+
+            </div>
+            <div class="content">
+                        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var imageLoader = document.getElementById('imageUploadField');
+        imageLoader.addEventListener('change', handleImage, true);
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        let c=0;
+
+        function handleImage(e){
+            var reader = new FileReader();
+            reader.onload = function(event){
+                var img = new Image();
+                img.onload = function(){
+                    let newDimensions = calculateDimensions(img.width, img.height);
+                    canvas.width = newDimensions.width;
+                    canvas.height = newDimensions.height;
+                    img.width=newDimensions.width;
+                    img.height=newDimensions.height;
+                    document.getElementById("work").style.width=newDimensions.width;
+                    document.getElementById("work").style.height=newDimensions.height;
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    // canvas.classList.add('zoomed-image');
+                    applyDithering();
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);   
+        }
+
+        function handleImageCopy(e){
+            var img = new Image();
+            img.onload = function(){
+                let newDimensions = calculateDimensions(img.width, img.height);
+                canvas.width = newDimensions.width;
+                canvas.height = newDimensions.height;
+                document.getElementById("work").style.width=newDimensions.width;
+                document.getElementById("work").style.height=newDimensions.height;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                
+                applyDithering();
+            }
+            img.src = x;
+        }
+
+        function calculateDimensions(width, height) {
+            let newWidth, newHeight;
+            let heightnew=document.getElementById("leftv").value; 
+            let widthnew=document.getElementById("rightv").value; 
+            if(document.getElementById("leftv").value>document.getElementById("rightv").value){
+                newHeight=document.getElementById("leftv").value*240;
+                newWidth=Math.ceil(((document.getElementById("leftv").value*240)/height)*width);
+            }
+            else if(document.getElementById("rightv").value>document.getElementById("leftv").value){
+                newWidth=document.getElementById("rightv").value*240;
+                newHeight=Math.ceil(((document.getElementById("rightv").value*240)/width)*height);
+            }
+            else{
+                newWidth=document.getElementById("leftv").value*240;
+                newHeight=document.getElementById("leftv").value*240;
+            }
+            return {width: newWidth, height: newHeight};
+        }
+
+        function quantizeColor(color, palette){
+            let minDistance = Infinity;
+            let closestColor;
+            for(let i = 0; i<palette.length; i++){
+                let distance = Math.pow((color[0]-palette[i][0]),2)+Math.pow((color[1]-palette[i][1]),2)+Math.pow((color[2]-palette[i][2]),2);
+                if(distance<minDistance){
+                    minDistance = distance;
+                    closestColor = palette[i];
+                }
+            }
+            return closestColor;
+        }
+
+        function applyDithering() {
+            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            let data = imageData.data;
+            let palette = [
+            [22,22,22],
+            [245,245,245],
+            [241,215,231],
+            [126,147,167],
+            [121,79,145],
+            [255,177,139],
+            [181,129,81],
+            [220,121,116],
+            [219,40,28],
+            [208,87,138],
+            [248,229,154],
+            [177,77,181],
+            [248,173,109],
+            [178,162,201],
+            [208,206,202],
+            [189,154,122],
+            [238,182,97],
+            [0,187,220],
+            [174,184,99],
+            [139,191,233],
+            [94,127,41],
+            [235,208,181],
+            [62,135,202],
+            [46,200,78],
+            [140,138,137],
+            [104,63,34],
+            [255,104,0],
+            [230,155,220],
+            [100,100,100],
+            [51,63,73],
+            [0,94,184],
+            [79,54,37],
+            [231,148,183],
+            [0,154,68],
+            [213,201,153],
+            [109,53,42],
+            [190,203,235],
+            [180,189,1],
+            [255,209,1],
+            [198,70,69],
+            [0,53,79],
+            [52,85,38],
+            [142,128,174],
+            [229,158,110],
+            [255,163,1],
+            [167,85,35],
+            [176,206,216],
+            [240,196,161],
+            [175,165,111],
+            [178,181,177]
+            ];
+            for (let i = 0; i < data.length; i += 4) {
+                let oldColor = [data[i], data[i+1], data[i+2]];
+                let closestColor = quantizeColor(oldColor, palette);
+
+                data[i] = closestColor[0]; // red
+                data[i+1] = closestColor[1]; // green
+                data[i+2] = closestColor[2]; // blue
+            }
+            important=imageData;
+            ctx.putImageData(imageData, 0, 0);
+            applyBricks(canvas.toDataURL());
+        }
+
+
+
+        function applyBricks(iData){
+            const inputPicturePath = iData;
+            const imageMappings = {
+            '255,0,0': 'red.png',
+            '0,255,0': 'green.png',
+            '0,0,255': 'blue.png',
+            '22,22,22': 'colors/22,22,22.png',
+            '245,245,245': 'colors/245,245,245.png',
+            '241,215,231': 'colors/241,215,231.png',
+            '126,147,167': 'colors/126,147,167.png',
+            '121,79,145': 'colors/121,79,145.png',
+            '255,177,139': 'colors/255,177,139.png',
+            '181,129,81': 'colors/181,129,81.png',
+            '220,121,116': 'colors/220,121,116.png',
+            '219,40,28': 'colors/219,40,28.png',
+            '208,87,138': 'colors/208,87,138.png',
+            '248,229,154': 'colors/248,229,154.png',
+            '177,77,181': 'colors/177,77,181.png',
+            '248,173,109': 'colors/248,173,109.png',
+            '178,162,201': 'colors/178,162,201.png',
+            '208,206,202': 'colors/208,206,202.png',
+            '189,154,122': 'colors/189,154,122.png',
+            '238,182,97': 'colors/238,182,97.png',
+            '0,187,220': 'colors/0,187,220.png',
+            '174,184,99': 'colors/174,184,99.png',
+            '139,191,233': 'colors/139,191,233.png',
+            '94,127,41': 'colors/94,127,41.png',
+            '235,208,181': 'colors/235,208,181.png',
+            '62,135,202': 'colors/62,135,202.png',
+            '46,200,78': 'colors/46,200,78.png',
+            '140,138,137': 'colors/140,138,137.png',
+            '104,63,34': 'colors/104,63,34.png',
+            '255,104,0': 'colors/255,104,0.png',
+            '230,155,220': 'colors/230,155,220.png',
+            '100,100,100': 'colors/100,100,100.png',
+            '51,63,73': 'colors/51,63,73.png',
+            '0,94,184': 'colors/0,94,184.png',
+            '79,54,37': 'colors/79,54,37.png',
+            '231,148,183': 'colors/231,148,183.png',
+            '0,154,68': 'colors/0,154,68.png',
+            '213,201,153': 'colors/213,201,153.png',
+            '109,53,42': 'colors/109,53,42.png',
+            '190,203,235': 'colors/190,203,235.png',
+            '180,189,1': 'colors/180,189,1.png',
+            '255,209,1': 'colors/255,209,1.png',
+            '198,70,69': 'colors/198,70,69.png',
+            '0,53,79': 'colors/0,53,79.png',
+            '52,85,38': 'colors/52,85,38.png',
+            '142,128,174': 'colors/142,128,174.png',
+            '229,158,110': 'colors/229,158,110.png',
+            '255,163,1': 'colors/255,163,1.png',
+            '167,85,35': 'colors/167,85,35.png',
+            '176,206,216': 'colors/176,206,216.png',
+            '240,196,161': 'colors/240,196,161.png',
+            '175,165,111': 'colors/175,165,111.png',
+            '178,181,177': 'colors/178,181,177.png',
+            '172,148,115': 'colors/22,22,22.png',
+
+            };
+
+            const inputPicture = new Image();
+            inputPicture.src = inputPicturePath;
+
+            inputPicture.onload=function() {
+
+                inputPicture.width=72;
+                inputPicture.height=72;
+
+                let canvas=document.getElementById('canvas');
+                let ctx=canvas.getContext('2d');
+
+                canvas.width=720;
+                canvas.height=720;
+
+                // inputPicture.width=72;
+                // inputPicture.height=72;
+
+                ctx.drawImage(inputPicture,0,0,720,720);
+
+                let imageData=ctx.getImageData(0,0,720,720);
+                let data=imageData.data;
+                // console.log(data);
+
+                let rcanvas=document.getElementById('canvas');
+                let rctx=rcanvas.getContext('2d');
+                let love=0;
+
+                for(i=0;i<canvas.height;i+=10){
+                    for(j=0;j<canvas.width;j+=10){
+                        let k=ctx.getImageData(j,i,10,10).data;
+
+                        let r=k[0];
+                        let g=k[1];
+                        let b=k[2];
+
+                        let pixel=[r,g,b];
+                        console.log(pixel);
+
+                        // console.log(k);
+                        // console.log(r+" "+g+" "+b);
+
+                        if(pixel in imageMappings){
+                        (function (love1, love2) {
+                            let img = document.createElement('img');
+                            img.src = imageMappings[pixel];
+                            img.onload = function () {
+                            rctx.drawImage(img, love1, love2, 10, 10);
+                            };
+                        })(j, i);
+                        }
+                        else{
+                        (function (love1, love2) {
+                            let img = document.createElement('img');
+                            img.src = 'colors/79,54,37.png';
+                            img.width=1;
+                            img.height=1;
+                            img.onload = function () {
+                            rctx.drawImage(img, love1, love2, 10, 10);
+                            };
+                        })(j, i);
+                        }
+                    }
+                }
+                let la=rctx.getImageData(0,0,72,72);
+                // console.log(la.data)
+                // ctx.clearRect(0,0,720,720);
+                ctx.drawImage(rcanvas,0,0);
+            }
+
+        }
+
+        
+        var x=localStorage.getItem("imagePath");
+        
+        function re(){
+            var x1=document.getElementById("2");
+            x1.classList.add("hide");
+            x1=document.getElementById("3");
+            x1.classList.remove("hide");
+        }
+
+        function move(img){
+            const fileInput = document.querySelector('#imageUploadField');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener('load', function() {
+                    const imagePath = reader.result; 
+                    localStorage.setItem('imagePath', imagePath);
+                    document.getElementById("selected").src=imagePath;
+                    
+                });
+                reader.readAsDataURL(file);
+            }
+            
+            // ends
+            
+            var x=document.getElementById("imageUploadField");
+            var x1=document.getElementById("1");
+            x1.classList.add("hide");
+            x1=document.getElementById("2");
+            x1.classList.remove("hide");
+        }
+
+        let y=0;
+        
+        function rotateImage() {
+            var image = document.getElementById('selected');
+            y+=90;
+            image.style.transform="rotate("+y+"deg)";
+        }
+        
+        function inc(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            document.getElementById(x).value=a;
+            handleImageCopy();
+        }
+
+        function dec(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=1)
+            a=1;
+            document.getElementById(x).value=a;
+            handleImageCopy();
+        }
+
+        function incr(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            document.getElementById(x).value=a;
+            handleImageCopy();
+        }
+
+        function decr(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=1)
+            a=1;
+            document.getElementById(x).value=a;
+            handleImageCopy();
+        }
+
+        function ince(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            if(a>=100){
+                a=100;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("per").innerHTML=parseInt(a)+100+"%";
+            document.getElementById("canvas").style.width=parseInt(a)+100+"%";
+            document.getElementById("canvas").style.height=parseInt(a)+100+"%";
+        }
+
+        function dece(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=0){
+                a=0;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("per").innerHTML=parseInt(a)+100+"%";
+            document.getElementById("canvas").style.width=parseInt(a)+100+"%";
+            document.getElementById("canvas").style.height=parseInt(a)+100+"%";
+        }
+        
+        function change(x){
+            var per=document.getElementById(x).value;
+            document.getElementById("per").innerHTML=parseInt(per)+100+"%";
+            document.getElementById("canvas").style.width=parseInt(per)+100+"%";
+            document.getElementById("canvas").style.height=parseInt(per)+100+"%";
+        }
+
+        function trans(x){
+            var b=document.getElementById(x);
+            if(x=="b1"){
+                document.getElementById("b2").classList.remove("active");
+                b.classList.add("active");
+            }
+            else{
+                document.getElementById("b1").classList.remove("active");
+                b.classList.add("active");
+            }
+        }
+
+        function m(x){
+            var b=document.getElementById(x);
+            if(x=="bb1"){
+                document.getElementById("bb2").classList.remove("act");
+                b.classList.add("act");
+            }
+            else{
+                document.getElementById("bb1").classList.remove("act");
+                b.classList.add("act");
+            }
+        }
+
+
+        function chan(x){
+            var number=document.getElementById(x).value;
+            document.getElementById("number").innerHTML=parseInt(number);
+        }
+
+        function bm(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=0){
+                a=0;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("number").innerHTML=parseInt(a);
+        }
+
+        function bp(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            if(a>=100){
+                a=100;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("number").innerHTML=parseInt(a);
+        }
+
+        function mo(x){
+            var b=document.getElementById(x);
+            if(x=="b11"){
+                document.getElementById("b22").classList.remove("active");
+                document.getElementById("b33").classList.remove("active");
+                document.getElementById("b44").classList.remove("active");
+                b.classList.add("active");
+            }
+            else if(x=="b22"){
+                document.getElementById("b11").classList.remove("active");
+                document.getElementById("b33").classList.remove("active");
+                document.getElementById("b44").classList.remove("active");
+                b.classList.add("active");
+            }
+            else if(x=="b33"){
+                document.getElementById("b11").classList.remove("active");
+                document.getElementById("b22").classList.remove("active");
+                document.getElementById("b44").classList.remove("active");
+                b.classList.add("active");
+            }
+            else{
+                document.getElementById("b11").classList.remove("active");
+                document.getElementById("b22").classList.remove("active");
+                document.getElementById("b33").classList.remove("active");
+                b.classList.add("active");
+            }
+        }
+
+
+        // Brightness
+
+        function change_bright(x){
+            var per=document.getElementById(x).value;
+            document.getElementById("bright").innerHTML=parseInt(per)-100;
+            document.getElementById("canvas").style.filter="brightness("+parseInt(per)+"%)";
+        }
+
+        function ince_bright(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            if(a>=200){
+                a=200;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("bright").innerHTML=parseInt(a)-100;
+            document.getElementById("canvas").style.filter="brightness("+parseInt(a)+"%)";
+        }
+
+        function dece_bright(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=0){
+                a=0;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("bright").innerHTML=parseInt(a)-100;
+            document.getElementById("canvas").style.filter="brightness("+parseInt(a)+"%)";
+        }
+        
+        // Contrast
+        
+        function change_cont(x){
+            var per=document.getElementById(x).value;
+            console.log(per);
+            document.getElementById("cont").innerHTML=parseInt(per)-100;
+            document.getElementById("canvas").style.filter="contrast("+parseInt(per)+"%)";
+        }
+
+        function ince_cont(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            if(a>=200){
+                a=200;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("cont").innerHTML=parseInt(a)-100;
+            document.getElementById("canvas").style.filter="contrast("+parseInt(a)+"%)";
+        }
+
+        function dece_cont(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=0){
+                a=0;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("cont").innerHTML=parseInt(a)-100;
+            document.getElementById("canvas").style.filter="contrast("+parseInt(a)+"%)";
+        }
+
+
+        // Saturation
+
+        function change_sat(x){
+            var per=document.getElementById(x).value;
+            document.getElementById("sat").innerHTML=parseInt(per)-100;
+            document.getElementById("canvas").style.filter="saturate("+parseInt(per)+"%)";
+        }
+
+        function ince_sat(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)+1;
+            if(a>=200){
+                a=200;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("sat").innerHTML=parseInt(a)-100;
+            document.getElementById("canvas").style.filter="saturate("+parseInt(a)+"%)";
+        }
+
+        function dece_sat(x){
+            var a=document.getElementById(x).value;
+            a=parseInt(a)-1;
+            if(a<=0){
+                a=0;
+            }
+            document.getElementById(x).value=a;
+            document.getElementById("sat").innerHTML=parseInt(a)-100;
+            document.getElementById("canvas").style.filter="brighsaturatetness("+parseInt(a)+"%)";
+        }
+
+
+        // hides and actives the blocks
+
+        function hide(x){
+            var a=document.getElementById(x);
+            if(x=="c1"){
+                document.getElementById("c2").classList.add("hide");
+                document.getElementById("c3").classList.add("hide");
+                a.classList.remove("hide");
+            }
+            else if(x=="c2"){
+                document.getElementById("c1").classList.add("hide");
+                document.getElementById("c3").classList.add("hide");
+                a.classList.remove("hide");
+            }
+            else{
+                document.getElementById("c1").classList.add("hide");
+                document.getElementById("c2").classList.add("hide");
+                a.classList.remove("hide");
+            }
+        }
+
+
+    </script>
+</body>
+</html>
